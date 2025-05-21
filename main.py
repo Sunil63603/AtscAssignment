@@ -2,6 +2,17 @@ import cv2 #this loads openCV,used to process images
 import numpy as np #this loads numpy,helps with math and arrays.
 import matplotlib.pyplot as plt #this helps us display images like a chart.
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+  return "Hello from Flask on Render!"
+
+if __name__ == "__main__":
+  app.run(host="0.0.0.0",port=10000) 
+
 #Read the image
 image = cv2.imread("image_assignment.jpg")
 
